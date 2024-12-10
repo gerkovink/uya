@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.57">
+
+  <meta name="author" content="Gerko Vink">
+  <meta name="dcterms.date" content="2024-11-11">
+  <title>AI and Education</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">AI and Education</h1>
+  <p class="subtitle">Impact on Humans, Society, Thinking and … Existence</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Gerko Vink <a href="https://orcid.org/0000-0001-9767-1924" class="quarto-title-author-orcid"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg=="></a>
+</div>
+</div>
+</div>
+
+  <p class="date">11 Nov 2024</p>
+</section>
+<section id="disclaimer" class="slide level2">
+<h2>Disclaimer</h2>
+<p>This presentation is a collection of my thoughts and opinions. It does not necessarily represent the views of Utrecht University or the USO Consortium AI in Higher Education.</p>
+<p>These materials are generated by Gerko Vink, who holds the copyright. The intellectual property belongs to Utrecht University. Images are either directly linked, or generated with a Large Language Model. That said, there is no information in this presentation that exceeds legal use of copyright materials in academic settings, or that should not be part of the public domain.</p>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>You <strong>may use</strong> any and all content in this presentation - including my name - and submit it as input to generative AI tools, with the following <strong>exception</strong>:</p>
+<ul>
+<li>You must ensure that the content is not used for further training of the model</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Source:</p>
+<ul>
+<li><a href="https://www.gerkovink.com/edu">www.gerkovink.com/edu</a></li>
+<li><a href="https://github.com/gerkovink/edu">github.com/gerkovink/edu</a></li>
+</ul>
+</section>
+<section id="first-of-all" class="slide level2">
+<h2>First of all</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Education is a universal right</strong></p>
+</div>
+<div class="callout-content">
+<p><q><em>Everyone has the right to education. Education shall be free, at least in the elementary and fundamental stages. Elementary education shall be compulsory. Technical and professional education shall be made generally available and higher education shall be equally accessible to all on the basis of merit</em></q> <br><br> Source: <a href="https://www.un.org/sites/un2.un.org/files/2021/03/udhr.pdf">Universal Declaration of Human Rights</a> as declared by the United Nations in 1948.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="second-of-all" class="slide level2">
+<h2>Second of all</h2>
+<center>
+<blockquote class="instagram-media" data-instgrm-captioned="" data-instgrm-permalink="https://www.instagram.com/reel/C8YnYyUMkAg/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:340px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+<div style="padding:16px;">
+<a href="https://www.instagram.com/reel/C8YnYyUMkAg/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">
+<div style=" display: flex; flex-direction: row; align-items: center;">
+<div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+
+</div>
+<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+
+</div>
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+
+</div>
+</div>
+</div>
+<div style="padding: 19% 0;">
+
+</div>
+<div style="display:block; height:50px; margin:0 auto 12px; width:50px;">
+<svg width="50px" height="50px" viewbox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xlink="https://www.w3.org/1999/xlink">
+<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g>
+</svg>
+</div>
+<div style="padding-top: 8px;">
+<div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+View this post on Instagram
+</div>
+</div>
+<div style="padding: 12.5% 0;">
+
+</div>
+<div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+<div>
+<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+
+</div>
+<div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+
+</div>
+<div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+
+</div>
+</div>
+<div style="margin-left: 8px;">
+<div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+
+</div>
+<div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+
+</div>
+</div>
+<div style="margin-left: auto;">
+<div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+
+</div>
+<div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+
+</div>
+<div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+
+</div>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+
+</div>
+<div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+
+</div>
+</div>
+</a>
+<p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+<a href="https://www.instagram.com/reel/C8YnYyUMkAg/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">A post shared by Marcy Cortega (<span class="citation" data-cites="marcycortega">(</span></a><a href="#/references" role="doc-biblioref" onclick=""><strong>marcycortega?</strong></a>))
+</p>
+</div>
+</blockquote>
+<script async="" src="//www.instagram.com/embed.js"></script>
+</center>
+</section>
+<section>
+<section id="introduction-to-gen-ai" class="title-slide slide level1 center">
+<h1>Introduction to gen AI</h1>
+
+</section>
+<section id="what-is-generative-ai" class="slide level2">
+<h2>What is Generative AI?</h2>
+<p><strong>Generative AI</strong> refers to a subset of artificial intelligence technologies capable of generating new content, ideas, or data that resemble human-like outputs.</p>
+<ul>
+<li>Generative AI operates through advanced machine learning models, particularly deep learning networks.</li>
+<li>These models are trained on large amounts of data in a specific domain (e.g., text, images, video) and can then generate new outputs based on the patterns and features they have learned.</li>
+</ul>
+<p>Some common examples of generative AI technologies include:</p>
+<ul>
+<li><p>Chatbots and virtual tutors: AI-driven chatbots can provide personalized tutoring, answering student questions and offering explanations on a wide range of subjects.</p></li>
+<li><p>Content creation tools: Tools like GPT (Generative Pre-trained Transformer) can assist in creating educational content, generating lecture notes, or drafting exam questions based on certain criteria.</p></li>
+<li><p>Automated essay scoring and feedback: AI models can grade essays and provide feedback to students on their writing.</p></li>
+</ul>
+</section>
+<section id="what-is-generative-ai-1" class="slide level2">
+<h2>What is generative AI?</h2>
+
+<img data-src="img/gpt1.png" class="r-stretch"></section>
+<section id="what-does-it-think-it-looks-like" class="slide level2">
+<h2>What does it think it looks like?</h2>
+<p>See Karin van Es en Dennis Nguyen (2024) for much more scientific insight into AI representations</p>
+
+<img data-src="img/gpt2.png" class="r-stretch"><div class="footer">
+<p>van Es, K., Nguyen, D. “Your friendly AI assistant”: the anthropomorphic self-representations of ChatGPT and its implications for imagining AI. AI &amp; Soc (2024). https://doi.org/10.1007/s00146-024-02108-6</p>
+</div>
+</section>
+<section id="what-does-it-think-it-looks-like-1" class="slide level2">
+<h2>What does it think it looks like?</h2>
+
+<img data-src="img/gpt3.png" class="r-stretch"></section>
+<section id="does-it-think-it-is-smart" class="slide level2">
+<h2>Does it think it is smart?</h2>
+
+<img data-src="img/gpt4.png" class="r-stretch"></section>
+<section id="no-need-for-humans-then" class="slide level2">
+<h2>No need for humans, then?</h2>
+
+<img data-src="img/gpt5.png" class="r-stretch"></section>
+<section id="what-does-this-tell-us" class="slide level2">
+<h2>What does this tell us?</h2>
+</section>
+<section id="what-about-other-ai-tools" class="slide level2">
+<h2>What about other AI tools?</h2>
+
+<img data-src="img/sdf1.png" class="r-stretch"></section>
+<section id="with-a-bit-of-replication" class="slide level2">
+<h2>With a bit of replication</h2>
+
+<img data-src="img/sdf2.png" class="r-stretch"></section>
+<section id="and-hallucination" class="slide level2">
+<h2>And hallucination</h2>
+
+<img data-src="img/sdf3.png" class="r-stretch"></section>
+<section id="how-do-ai-tools-like-llms-work-in-10-steps" class="slide level2">
+<h2>How Do AI Tools like LLMs Work (in 10 steps)?</h2>
+<ol type="1">
+<li>Machine learning enables computers to learn from data, identify patterns, and make decisions with varying levels of human intervention.</li>
+<li>Machine learning methods often work by means of training, for example to perform a single task or set of tasks.</li>
+<li>Some forms of models are not specifically programmed to perform certain tasks and learn withouth human intervention.</li>
+<li>The domain of machine learning that focuses on such human brain-like deep learning strategies is called neural networks (NNs).</li>
+<li>Transformers (<a href="https://proceedings.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html">Vaswani et al.&nbsp;2017</a>) are a type of neural network that have advanced deep learning, particularly in the domain of natural language processing.</li>
+<li>Instead of modeling words one after another, transformers can look at whole sentences or paragraphs at once and take the context of text into account.</li>
+<li>It is not hard to imagine that contextual understanding allows for better learning and more flexible applications.</li>
+</ol>
+<div class="footer">
+<p><a href="https://proceedings.neurips.cc/paper_files/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845aa-Abstract.html">Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., … &amp; Polosukhin, I. (2017).<br>Attention is all you need. Advances in neural information processing systems, 30.</a></p>
+</div>
+</section>
+<section id="how-do-ai-tools-like-llms-work-in-10-steps-1" class="slide level2">
+<h2>How Do AI Tools like LLMs Work (in 10 steps)?</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p><br></p>
+<ol start="8" type="1">
+<li>Generative AI tools, such as Gemini, chatGPT or GitHub Copilot are applications of transformers.</li>
+<li>These tools have been trained on extremely large amounts of data (mostly text) and have learned from the structure, meaning and nuances of the language.</li>
+<li>After training, these tools can generate new text that both coherent an contextually relevant. <br><br> Don’t be fooled! It’s just a prediction model</li>
+</ol>
+</div><div class="column" style="width:40%;">
+<p><br> <img data-src="img/ai_train.webp" style="width:100.0%"></p>
+</div></div>
+<div class="footer">
+<p>Image prompt: <em>generate an image of an AI in android form training with weights in a gym</em></p>
+</div>
+</section>
+<section id="who-develops-generative-ai-tools" class="slide level2">
+<h2>Who develops generative AI tools</h2>
+<ul>
+<li>Generative AI technologies are often developed by publicly traded companies with:
+<ul>
+<li>Deep pockets</li>
+<li>Shareholders</li>
+<li>Motives and goals that may diverge from academic or public interests</li>
+</ul></li>
+<li>These technologies also require significant computing resources for training and operation
+<ul>
+<li>This skews access and development to those with substantial resources.</li>
+<li>If you feel sad or overwhelmed by the low sense of control, read <a href="https://ieeexplore.ieee.org/abstract/document/10458714">Choose Your Weapon: Survival Strategies for Depressed AI Academics</a></li>
+</ul></li>
+</ul>
+<div class="footer">
+<p>Togelius, J., &amp; Yannakakis, G. N. (2024). Choose Your Weapon: Survival Strategies for Depressed AI Academics [Point of View]. Proceedings of the IEEE, 112(1), 4-11.</p>
+</div>
+</section></section>
+<section>
+<section id="impact-of-generative-ai" class="title-slide slide level1 center">
+<h1>Impact of generative AI</h1>
+
+</section>
+<section id="impact-on-education" class="slide level2">
+<h2>Impact on education</h2>
+<p>There is a finite number of options for dealing with generative AI in education. These options translate to the following <em>stages of AI grief</em>:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ol type="1">
+<li><strong>Ignore</strong> the existence of generative AI</li>
+<li><strong>Forbid</strong> the use of generative AI</li>
+<li><strong>Circumnavigate</strong> generative AI by using offline assessment modes like pen/paper exams or oral exams</li>
+<li><strong>Test around</strong> Let students perform tasks that generative AI struggles with</li>
+<li><strong>Embrace</strong> generative AI and allow it in course work</li>
+<li><strong>Rethink</strong> the way we assess students and develop new assessment methodologies</li>
+</ol>
+</div><div class="column" style="width:50%;">
+<p><img data-src="https://respage.com/wp-content/uploads/2022/01/Why-Human-and-AI-Leasing-Agents-Need-Each-Other-to-Deliver-Excellent-Customer-Service-to-Prospects-1024x683.png" style="width:100.0%"></p>
+</div></div>
+</section>
+<section id="ai-assessment-scale" class="slide level2">
+<h2>AI Assessment Scale</h2>
+
+<img data-src="img/aias.png" class="r-stretch"><div class="footer">
+<p><a href="https://open-publishing.org/journals/index.php/jutlp/article/view/810">Perkins, M., Furze, L., Roe, J., &amp; MacVaugh, J. (2024). The Artificial Intelligence Assessment Scale (AIAS): A framework for ethical integration of generative AI in educational assessment. Journal of University Teaching and Learning Practice, 21(06)</a></p>
+</div>
+</section>
+<section id="futureproof-education" class="slide level2">
+<h2>Futureproof education?</h2>
+<div class="callout callout-important callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Could it be</strong></p>
+</div>
+<div class="callout-content">
+<p>That our defined learning goals, our evaluations and the skills that we teach are not aligned with the future professional needs for our student body?</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="positive-impact-of-ai-on-education" class="title-slide slide level1 center">
+<h1>Positive Impact of AI on Education</h1>
+
+</section>
+<section id="not-really-learning-but-effective" class="slide level2">
+<h2>Not really learning, but effective</h2>
+
+<img data-src="img/pos1.png" class="r-stretch"><div class="footer">
+<p>Farhood, H., Joudah, I., Beheshti, A., &amp; Muller, S. (2024). Advancing student outcome predictions through generative adversarial networks. Computers and Education: Artificial Intelligence, 7, 100293.</p>
+</div>
+</section>
+<section id="productivity-is-better" class="slide level2">
+<h2>Productivity is better</h2>
+
+<img data-src="img/pos2.png" class="r-stretch"><div class="footer">
+<p>Nakavachara, V., Potipiti, T., &amp; Chaiwat, T. (2024). Experimenting with Generative AI: Does ChatGPT Really Increase Everyone’s Productivity?. arXiv preprint arXiv:2403.01770.</p>
+</div>
+</section>
+<section id="coding-is-better-and-easier" class="slide level2">
+<h2>Coding is better and easier</h2>
+
+<img data-src="img/pos3.png" class="r-stretch"><div class="footer">
+<p>Nakavachara, V., Potipiti, T., &amp; Chaiwat, T. (2024). Experimenting with Generative AI: Does ChatGPT Really Increase Everyone’s Productivity?. arXiv preprint arXiv:2403.01770.</p>
+</div>
+</section>
+<section id="what-can-we-learn-from-this" class="slide level2">
+<h2>What can we learn from this?</h2>
+<p>GenAI tools can be a great asset in the educational process. They can help students to be more productive, to code more effectively and to develop new skills.</p>
+<p>This does not mean that they learn more or better. It means that they can be more effective in their learning process.</p>
+<p>The bottomline is that this learning process needs to be established before you can use add AI to it.</p>
+<p>If GenAI is replacing the thinking process, humanity may stumble into an existential crisis.</p>
+</section></section>
+<section>
+<section id="negative-impact-of-ai-on-learning" class="title-slide slide level1 center">
+<h1>Negative Impact of AI on learning</h1>
+
+</section>
+<section id="first-performance-of-genai" class="slide level2">
+<h2>First: Performance of GenAI</h2>
+<center>
+<p><img data-src="img/iq.png" style="width:80.0%"></p>
+<div class="footer">
+<p>Source: <a href="">https://trackingai.org/IQ</a></p>
+</div>
+</center></section>
+<section id="impact-of-ai-on-cognitive-performance" class="slide level2">
+<h2>Impact of AI on Cognitive Performance</h2>
+
+<img data-src="img/cogn1.png" class="r-stretch"><div class="footer">
+<p><a href="https://doi.org/10.1038/s41562-024-01859-y">Heersmink, R. Use of large language models might affect our cognitive skills. Nat Hum Behav (2024)</a></p>
+</div>
+</section>
+<section id="impact-of-ai-on-cognitive-performance-1" class="slide level2">
+<h2>Impact of AI on Cognitive Performance</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/cogn4.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/balance.webp"></p>
+</div></div>
+<div class="footer">
+<p><a href="https://doi.org/10.1016/j.yjoc.2023.100072">Habib, S., Vogel, T., Anli, X., &amp; Thorne, E. (2024). How does generative artificial intelligence impact student creativity?. Journal of Creativity, 34(1), 100072.</a></p>
+</div>
+</section>
+<section id="impact-of-ai-on-cognitive-performance-2" class="slide level2">
+<h2>Impact of AI on cognitive performance</h2>
+<p><img data-src="img/cogn2.png"> <img data-src="img/cogn3.png"></p>
+<div class="footer">
+<p><a href="https://doi.org/10.1186/s41239-024-00444-7">Abbas, M., Jam, F.A. &amp; Khan, T.I. Is it harmful or helpful? Examining the causes and consequences of generative AI usage among university students. <br> Int J Educ Technol High Educ 21, 10 (2024).</a></p>
+</div>
+</section>
+<section id="cogito-ergo-sum" class="slide level2">
+<h2>Cogito ergo sum</h2>
+
+<img data-src="img/descartes.webp" class="r-stretch"></section></section>
+<section>
+<section id="impact-beyond-learning" class="title-slide slide level1 center">
+<h1>Impact beyond learning</h1>
+
+</section>
+<section id="ethical-impact" class="slide level2">
+<h2>Ethical impact</h2>
+<p>Many people are unaware of the ethical implications of using AI tools, apart from presenting AI-generated work as your own product.</p>
+<ol type="1">
+<li>AI tools are often trained on data that is biased or incomplete, which can lead to biased or incorrect results.</li>
+<li>AI tools have demonstrated to yield inaccurate, incomplete or false information.</li>
+</ol>
+<ul>
+<li>This can happen when the AI tool perceives patterns or objects that are nonexistent, resulting in nonsensical or inaccurate output, often referred to as hallucinations <span class="citation" data-cites="ziwei alkaissi2023artificial athaluri2023exploring">(<a href="#/references" role="doc-biblioref" onclick="">Ji et al. 2023</a>; <a href="#/references" role="doc-biblioref" onclick="">Alkaissi and McFarlane 2023</a>; <a href="#/references" role="doc-biblioref" onclick="">Athaluri et al. 2023</a>)</span>.</li>
+<li>Some resistance against the term hallucinations has emerged <span class="citation" data-cites="Ostergaard2023">(<a href="#/references" role="doc-biblioref" onclick="">Østergaard and Nielbo 2023</a>)</span>.</li>
+</ul>
+<p>It is important to always use multiple sources to verify any bit of information. As a user of AI tools you should accept that <strong>only you are responsible</strong> for using, interpreting and curating AI-generated output.</p>
+<p>The age-old adage garbage in, garbage out holds here too: old biases and ideas may unwantedly be perpetuated by AI tools, thereby fueling divides, biases and stereotypes that we have tried so hard to remove.</p>
+</section>
+<section id="legal-impact" class="slide level2">
+<h2>Legal impact</h2>
+<p>AI tools are often trained on data that is copyrighted or patented, which can lead to legal issues if the data is used without permission. To avoid such issues, when interacting with AI tools, users should protect intellectual property rights and copyright.</p>
+<p>When submitting prompts as <strong>input to AI tools</strong> it is important to ensure that</p>
+<ul>
+<li>you are allowed to share the information in the prompt or have explicit permission</li>
+<li>you are not infringing on any right associated with the information in the prompt</li>
+</ul>
+<p>Likewise, it is important to realize that no intellectual property or copyright may be infringed with using the <strong>output of the AI tool</strong>. The training of the AI tool happened on a large set of data; some of that data may have been used illegitimately. By using AI generated output you may plagiarize existing work or otherwise infringe on intellectual property rights.</p>
+<p>This is a tricky scenario, as the nontransparent training of AI tools makes it challenging to prove that no IP is infringed with the realized output. However, one could argue that embedding AI tools in a normal scientific knowledge discovery scenario would minimize the change of any infringement. Such a route would result in a process where information from multiple sources is processed and curated by an actual human.</p>
+</section>
+<section id="environmental-impact" class="slide level2">
+<h2>Environmental impact</h2>
+<p>Are you aware of the impact that contemporary AI tools may have on the environment?</p>
+<ul>
+<li>Together with e.g.&nbsp;cloud storage and e-mail traffic, AI tools constitute a <em>hidden carbon footprint</em> that often escapes our awareness.</li>
+</ul>
+<p>While it is not as apparent as airline travel, the impact of using AI tools may be far greater than you think!</p>
+<ul>
+<li>Decarbonizing the energy usage alone is not enough to sustainably implement AI tools in our everyday life <span class="citation" data-cites="berthelot2023">(<a href="#/references" role="doc-biblioref" onclick="">Berthelot et al. 2024</a>)</span>.</li>
+<li>Using generative AI Tools has been estimated to account for up to 25 times the energy emissions that are generated from training the models <span class="citation" data-cites="chien2023">(<a href="#/references" role="doc-biblioref" onclick="">Chien et al. 2023</a>)</span>.</li>
+</ul>
+<p>While the environmental impact can ultimately be significantly lowered by moving from server-based generative AI to on-chip generative AI, there will always be a cost of using AI tools.</p>
+<!-- Many people have thought about how AI will impact human life and Hollywood has monetized its threat to human existence. Not many may have realized that our lives may currently be at risk through AI-induced global warming. -->
+</section>
+<section id="social-impact" class="slide level2">
+<h2>Social impact</h2>
+<p>In recent years many idealistic promises have been made about the potential of AI to improve human life.</p>
+<ul>
+<li>Widespread access for everyone to AI models and tools has been said to contribute to equality, allowing everybody to access high quality information and interact witht the same technology.</li>
+<li>AI tools are neutral and can be used to harm people and spread misinformation.</li>
+<li>AI tools can be used to manipulate people, to deepen existing biases, to incite hate speech or to discriminate against people, evidence of which has been found in the use of AI tools in hiring processes and the potential for election manipulation <span class="citation" data-cites="baldassarre2023 lyttonAIHiringTools2024 aliswensonElectionDisinformationTakes2024 mekelapanditharatneHowAIPuts2023">(<a href="#/references" role="doc-biblioref" onclick="">Baldassarre et al. 2023</a>; <a href="#/references" role="doc-biblioref" onclick="">Lytton 2024</a>; <a href="#/references" role="doc-biblioref" onclick="">Ali Swenson and Kelvin Chan 2024</a>; <a href="#/references" role="doc-biblioref" onclick="">Mekela Panditharatne and Noah Giansiracusa 2023</a>)</span>.</li>
+</ul>
+<p>Aside from the potential for AI to incite societal harm on a fundamental level, it can also disrupt society on a more existential level. The widespread use of AI tools may lead to a loss of jobs, as AI tools can automate tasks that were previously done by humans. This can lead to a loss of income and a decrease in the quality of life for many people.</p>
+<p>The zeitgeist of contemporary AI tools pairs a strong call for regulatory action with a warning for over-regulation.</p>
+</section>
+<section id="human-rights-and-labor-rights" class="slide level2">
+<h2>Human rights and labor rights</h2>
+<p>There is <a href="https://time.com/6247678/openai-chatgpt-kenya-workers/">evidence</a> that the workers who curate these models are treated unfairly or even inhumanely by their employers.</p>
+<ul>
+<li>This <a href="https://blogs.lse.ac.uk/businessreview/2024/03/25/madhumita-murgia-ai-can-do-harm-when-people-dont-have-a-voice/">interview</a> also paints a good picture of how and where AI work can harm people.</li>
+</ul>
+<p>This means that the use of AI tools may not only effect the networks of the people who use them, but also have an effect on the people who curate the models behind these tools.</p>
+</section>
+<section id="so-far-impact-on-society" class="slide level2">
+<h2>So far: Impact on society</h2>
+<ul>
+<li>Ethical impact</li>
+<li>Legal impact</li>
+<li>Environmental impact</li>
+<li>Social impact</li>
+<li>Human rights and labor rights</li>
+<li>The Dunning-Kruger effect</li>
+</ul>
+
+<img data-src="https://s3.ap-southeast-2.amazonaws.com/assets.the-resilience-shield/app/uploads/2021/05/11143616/Mt-Stupid-1.png" class="r-stretch"></section></section>
+<section>
+<section id="how-to-proceed" class="title-slide slide level1 center">
+<h1>How to proceed</h1>
+
+</section>
+<section id="opinion" class="slide level2">
+<h2>Opinion</h2>
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Warning</strong></p>
+</div>
+<div class="callout-content">
+<p>The rapid rise of key technologies creates friction in our current societal structures, norms and expectations.</p>
+<p>We need to move towards a more sustainable way of living together with <em>other</em> forms of intelligence.</p>
+<p>This requires joint experimentation from academia, society, industry and government.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>Use generative AI tools to extend your capabilities, not to replace them. AI is not part of the human evolution process.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="towards-responsible-genai-use" class="slide level2">
+<h2>Towards responsible genAI use</h2>
+<p>I believe that we should demand from the scientific community to follow these simple steps when using generative AI tools:</p>
+<ol type="1">
+<li>Minimize the use of AI tools, as they are (currently) environmentally unfriendly</li>
+<li>Don’t input confidential or personal information</li>
+<li>Don’t input information that violates IP or copyright</li>
+<li>Don’t violate IP with using output from the tool</li>
+<li>Confirm the output accuracy</li>
+<li>Check the tool output for bias</li>
+<li>Disclose the use of AI tools in your work</li>
+<li>Don’t do naughty or unjust things with AI tools</li>
+<li>Ask the tool not to use input for training</li>
+<li>Open the content you produce by using AI tools as much as possible with permissive licenses</li>
+</ol>
+<p>If in doubt about any of the above, don’t use generative AI tools.</p>
+<p>For teachers: Put a disclaimer on your materials that governs what is or is not allowed when using generative AI tools.</p>
+</section></section>
+<section>
+<section id="inputting-student-data-into-ai" class="title-slide slide level1 center">
+<h1>Inputting student data into AI</h1>
+
+</section>
+<section id="is-it-a-good-idea-to-use-ai-in-grading" class="slide level2">
+<h2>Is It a Good Idea to Use AI in Grading?</h2>
+
+<img data-src="img/grade.png" class="r-stretch"><div class="footer">
+<p><a href="https://doi.org/10.1007/s40979-023-00130-7">Kumar, R. Faculty members’ use of artificial intelligence to grade student papers: a case of implications. Int J Educ Integr 19, 9 (2023)</a></p>
+</div>
+</section>
+<section id="student-rights-in-the-ai-era-classroom" class="slide level2">
+<h2>Student rights in the AI-Era Classroom</h2>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Human contact is a right</strong></p>
+</div>
+<div class="callout-content">
+<p>Every student has the right to be educated and graded by a human being. That right also includes the right to know a priori to what extend AI is used</p>
+<ol type="1">
+<li>in creating the educational materials,</li>
+<li>in providing feedback,</li>
+<li>in grading student work.</li>
+</ol>
+<p>Every student has the right to refuse interaction or any other involvement with an AI for their coursework.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<p>Minimize the use of AI tools, and when you do use them, do so responsibly.</p>
+<p>Generative AI can be a great companion in a knowledge discovery journey, but it is not a replacement for scientific rigor, active reading, critical thinking and human creativity.</p>
+<p>Contemporary AI should always be viewed as a complement to human actions rather than a replacement.</p>
+<p>Be as transparant about the use of AI tools in your work as you would require others to be. Also, make sure that you are not violating any rights or laws.</p>
+<div class="callout callout-note callout-style-simple">
+<div class="callout-body">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-content">
+<p>The only way to sustainable embedding of generative AI in academia is to ensure a sense of community and collective ownership of responsible AI practice.</p>
+<p>This requires a shared responsibility that requires the active participation of all involved, whereby we hold ourselves and each other accountable for our actions.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="uso-consortium-at-utrecht-university" class="slide level2">
+<h2>USO Consortium at Utrecht University</h2>
+
+<img data-src="img/cons.png" class="r-stretch"></section>
+<section id="references" class="slide level2 smaller scrollable">
+<h2>References</h2>
+<div class="quarto-auto-generated-content">
+<p><img src="logoUU.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Gerko Vink - Methods &amp; Statistics @ UU</p>
+</div>
+</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-aliswensonElectionDisinformationTakes2024" class="csl-entry" role="listitem">
+Ali Swenson, and Kelvin Chan. 2024. <span>“Election Disinformation Takes a Big Leap with <span>AI</span> Being Used to Deceive Worldwide.”</span> <em>AP News</em>. https://apnews.com/article/artificial-intelligence-elections-disinformation-chatgpt-bc283e7426402f0b4baa7df280a4c3fd.
+</div>
+<div id="ref-alkaissi2023artificial" class="csl-entry" role="listitem">
+Alkaissi, Hussam, and Samy I McFarlane. 2023. <span>“Artificial Hallucinations in <span>ChatGPT</span>: Implications in Scientific Writing.”</span> <em>Cur<span>ē</span>us</em> 15 (2).
+</div>
+<div id="ref-athaluri2023exploring" class="csl-entry" role="listitem">
+Athaluri, Sai Anirudh, Sandeep Varma Manthena, VSR Krishna Manoj Kesapragada, Vineel Yarlagadda, Tirth Dave, and Rama Tulasi Siri Duddumpudi. 2023. <span>“Exploring the Boundaries of Reality: Investigating the Phenomenon of Artificial Intelligence Hallucination in Scientific Writing Through <span>ChatGPT</span> References.”</span> <em>Cur<span>ē</span>us</em> 15 (4).
+</div>
+<div id="ref-baldassarre2023" class="csl-entry" role="listitem">
+Baldassarre, Maria Teresa, Danilo Caivano, Berenice Fernandez Nieto, Domenico Gigante, and Azzurra Ragone. 2023. <span>“The Social Impact of Generative <span>AI</span>: <span>An</span> Analysis on <span>ChatGPT</span>.”</span> In <em>Proceedings of the 2023 <span>ACM</span> Conference on Information Technology for Social Good</em>, 363–73. <span>GoodIT</span> ’23. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/3582515.3609555">https://doi.org/10.1145/3582515.3609555</a>.
+</div>
+<div id="ref-berthelot2023" class="csl-entry" role="listitem">
+Berthelot, Adrien, Eddy Caron, Mathilde Jay, and Laurent Lefèvre. 2024. <span>“Estimating the Environmental Impact of <span>Generative-AI</span> Services Using an <span class="nocase">LCA-based</span> Methodology.”</span> In <em><span>CIRP LCE</span> 2024 - 31st Conference on Life Cycle Engineering</em>, 1–10. Turin, Italy.
+</div>
+<div id="ref-chien2023" class="csl-entry" role="listitem">
+Chien, Andrew A, Liuzixuan Lin, Hai Nguyen, Varsha Rao, Tristan Sharma, and Rajini Wijayawardana. 2023. <span>“Reducing the Carbon Impact of Generative <span>AI</span> Inference (Today and in 2035).”</span> In <em>Proceedings of the 2nd Workshop on Sustainable Computer Systems</em>. <span>HotCarbon</span> ’23. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/3604930.3605705">https://doi.org/10.1145/3604930.3605705</a>.
+</div>
+<div id="ref-ziwei" class="csl-entry" role="listitem">
+Ji, Ziwei, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Ye Jin Bang, Andrea Madotto, and Pascale Fung. 2023. <span>“Survey of Hallucination in Natural Language Generation.”</span> <em>Acm Computing Surveys</em> 55 (12). <a href="https://doi.org/10.1145/3571730">https://doi.org/10.1145/3571730</a>.
+</div>
+<div id="ref-lyttonAIHiringTools2024" class="csl-entry" role="listitem">
+Lytton, Charlotte. 2024. <span>“<span>AI</span> Hiring Tools May Be Filtering Out the Best Job Applicants.”</span> https://www.bbc.com/worklife/article/20240214-ai-recruiting-hiring-software-bias-discrimination.
+</div>
+<div id="ref-mekelapanditharatneHowAIPuts2023" class="csl-entry" role="listitem">
+Mekela Panditharatne, and Noah Giansiracusa. 2023. <span>“How <span>AI Puts Elections</span> at <span>Risk</span> — <span>And</span> the <span>Needed Safeguards</span> <span></span> <span>Brennan Center</span> for <span>Justice</span>.”</span> https://www.brennancenter.org/our-work/analysis-opinion/how-ai-puts-elections-risk-and-needed-safeguards.
+</div>
+<div id="ref-Ostergaard2023" class="csl-entry" role="listitem">
+Østergaard, Søren Dinesen, and Kristoffer Laigaard Nielbo. 2023. <span>“False Responses from Artificial Intelligence Models Are Not Hallucinations.”</span> <em>Schizophrenia Bulletin</em> 49 (5): 1105–7. <a href="https://doi.org/10.1093/schbul/sbad068">https://doi.org/10.1093/schbul/sbad068</a>.
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/multiplex/socket.io.js"></script>
+  <script src="index_files/libs/revealjs/plugin/multiplex/multiplex.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'multiplex': {"secret":"17186096217914137406","id":"200192489f9d3fb5","url":"https://reveal-multiplex.glitch.me/"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 7.5e-2,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>
