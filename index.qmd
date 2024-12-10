@@ -15,7 +15,7 @@ format:
     slide-number: true
     margin: 0.075
     logo: "logoUU.png" 
-    toc: true
+    toc: false
     toc-depth: 1
     toc-title: Outline
     scrollable: false
@@ -425,14 +425,7 @@ Source: [https://trackingai.org/IQ]()
 [Abbas, M., Jam, F.A. & Khan, T.I. Is it harmful or helpful? Examining the causes and consequences of generative AI usage among university students. <br> Int J Educ Technol High Educ 21, 10 (2024).]( https://doi.org/10.1186/s41239-024-00444-7)
 :::
 
-## Cogito ergo sum
-
-![](img/descartes.webp)
-## Cogito ergo sum
-
-
-## Conclusion
-
+## My biggest fear
 
 ![](https://s3.ap-southeast-2.amazonaws.com/assets.the-resilience-shield/app/uploads/2021/05/11143616/Mt-Stupid-1.png)
 
@@ -440,7 +433,26 @@ Source: [https://trackingai.org/IQ]()
 [Dunning, D. (2011). The Dunning–Kruger effect: On being ignorant of one’s own ignorance. In Advances in experimental social psychology (Vol. 44, pp. 247-296). Academic Press. ](https://doi.org/10.1016/B978-0-12-385522-0.00005-6)
 :::
 
+## Cogito ergo sum
+
+![](img/descartes.webp)
+
+
+## Conclusion
+The way that humans learn has not changed. The tools that we have at our disposal, however, are becoming more plentiful.  We should be careful in implementing these tools into student learning, as they may pose a threat to our cognitive relevance. 
+
+Teaching students how to leverage their own work and creativity is a prime goal for the future of education. 
+
+Teaching our community to replace their own thinking with AI tools will limit the potential of our scientific effort and our intellectual property.
+
+::: {.callout-tip}
+Use generative AI tools to extend your capabilities, not to replace them. AI is IMO not part of the human evolution process. 
+:::
+
+
 # Impact beyond learning
+
+Disclaimer: if you like GenAI and a clean conscience, you may not want to read the next slides.
 
 ## Ethical impact
 
